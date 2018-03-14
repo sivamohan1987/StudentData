@@ -6,6 +6,7 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
+import { LogoutComponent } from './logout.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { LoginComponent } from './login.component';
     MaterializeModule,
     LoginRoutingModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, LogoutComponent]
 })
 export class LoginModule { }

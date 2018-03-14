@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -7,9 +8,19 @@ import { UserService } from '../user.service';
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
-  users: Array<{id: number, name: string, username: string, password: string, profession: string}>;
+  users: Array<any>;
 
-  constructor(private _userService: UserService) {
+  constructor(private _userService: UserService, private _router: Router) {
+    if (!localStorage.getItem('userToken')) {
+      this._router.navigate(['login']);
+    }
+    this.getUsers();
+  }
+
+  ngOnInit() {
+  }
+
+  getUsers() {
     this._userService.getUsers()
         .subscribe(
           data => {
@@ -26,17 +37,11 @@ export class StudentsComponent implements OnInit {
         );
   }
 
-  ngOnInit() {
-  }
-
   deleteUser(userId: number) {
     this._userService.deleteUser(userId)
         .subscribe(
           data => {
-            
-          },
-          error => {
-            'No users found';
+            window.location.reload();
           }
         );
   }

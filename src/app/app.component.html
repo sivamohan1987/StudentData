@@ -2,7 +2,8 @@
 <div class="container">
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">{{ title | uppercase }}</a>
+      <a href="#!" class="brand-logo hide-on-small-only">{{ title | uppercase }}</a>
+      <a href="#!" class="brand-logo truncate hide-on-med-and-up show-on-small">{{ mobileTitle | uppercase }}</a>
       <a materialize="sideNav" [materializeParams]="sidenavParams" [materializeActions]="sidenavActions" data-activates="mobile-nav" class="button-collapse hide-on-large-only">
         <i class="material-icons">menu</i>
       </a>

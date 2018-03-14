@@ -1,0 +1,17 @@
+.profession .col {
+    border-left: 3px solid #ee6e73;
+    margin: 1rem 0;
+}
+.profession .title span {
+    
+    font-weight: 500;
+}
+.top-10 {
+    margin-top: 10px;
+}
+.bottom-10 {
+    margin-bottom: 10px;
+}
+.bottom-15 {
+    margin-bottom: 15px;
+}

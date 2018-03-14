@@ -1,3 +1,37 @@
-<p>
-  view works!
-</p>
+<blockquote><h5>{{user?.name | uppercase}}</h5></blockquote>
+<ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"><i class="material-icons">account_circle</i>About</div>
+      <div class="collapsible-body">
+        {{user?.about}}
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">work</i>Profession</div>
+      <div class="collapsible-body">
+        <div class="row">
+          <div class="profession">
+            <div class="col l6 s12 title"><span>Job Title&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user?.profession}}</div>
+            <div class="col l6 s12 title"><span>Location&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user?.location}}</div>
+          </div>
+          <div class="col s12 divider"></div>
+          <div class="col s12 top-10">
+            <h5 class="bottom-15">Skills</h5>
+            <span *ngFor="let skill of user?.skills" class="chip">{{skill}}</span>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">public</i>Contact</div>
+      <div class="collapsible-body">
+        <div class="row">
+          <div class="col l6 s12 valign-wrapper"><i class="material-icons">phone_android</i>&nbsp;&nbsp;&nbsp;&nbsp;{{user?.phone}}</div>
+          <div class="col l6 s12 valign-wrapper"><i class="material-icons">email</i>&nbsp;&nbsp;&nbsp;&nbsp;{{user?.email}}</div>
+          <div _ngcontent-c1="" class="col s12 top-10 bottom-10 divider hide-on-small-only"></div>
+          <div class="col l6 s12 valign-wrapper"><i class="material-icons">location_on</i>&nbsp;&nbsp;&nbsp;&nbsp;{{user?.address}}</div>
+          <div class="col l6 s12 valign-wrapper"><i class="material-icons">laptop</i>&nbsp;&nbsp;&nbsp;&nbsp;{{user?.website}}</div>
+        </div>
+      </div>
+    </li>
+  </ul>

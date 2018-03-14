@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
   title = 'Student Information System';
+  mobileTitle = 'Student Info Sys';
   menuItems: MenuItem[];
   sidenavParams: any[];
   sidenavActions: EventEmitter<any>;
@@ -22,6 +23,7 @@ export class AppComponent {
       ];
     if (localStorage.getItem('userToken')) {
       this.menuItems.shift();
+      this.menuItems.push({ name: 'Logout', route: '/logout' });
     }
   }
 
