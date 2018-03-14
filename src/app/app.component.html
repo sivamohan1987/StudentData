@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">{{ title | uppercase }}</a>
+      <a materialize="sideNav" [materializeParams]="sidenavParams" [materializeActions]="sidenavActions" data-activates="mobile-nav" class="button-collapse hide-on-large-only">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active"><a routerLink="{{menuItem.route}}">{{ menuItem.name }}</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-nav">
+        <li><a ><i id="close-mobile-menu" class="material-icons" (click)="close()">close</i></a></li>
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active"><a routerLink="{{menuItem.route}}">{{ menuItem.name }}</a></li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

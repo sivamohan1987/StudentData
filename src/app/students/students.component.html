@@ -1,0 +1,25 @@
+<blockquote>Student Listing</blockquote>
+<table class="striped highlight">
+  <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Profession</th>
+        <th>Username</th>
+        <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.profession }}</td>
+      <td>{{ user.username }}</td>
+      <td>
+        <a routerLink="/view/{{user.id}}"><i class="material-icons dp48">account_box</i></a>
+        <a href="javascript:void();" (click)="deleteUser(user.id)"><i class="material-icons dp48">delete</i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>

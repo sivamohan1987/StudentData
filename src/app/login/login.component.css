@@ -1,0 +1,14 @@
+#loginContainer {
+    margin-top: 20px;
+}
+#loginContainer label {
+    font-size: 1rem;
+    color: #1976d2;
+}
+.has-danger {
+    border-color: red !important;
+}
+.error {
+    color: red;
+    margin: 15px 0;
+}

@@ -1,0 +1,24 @@
+<div id="loginContainer" class="row">
+  <form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="col s12 l12 error" *ngIf="loginForm.error">{{ loginForm.error }}</div>
+    <div class="col s12 l6 form-group">
+      <label for="username">Username</label>
+      <input id="username" name="username" value="" type="text" class="user-name form-control" [(ngModel)]="login.username" required minlength="4"
+      [ngClass]="{
+        'has-danger': loginForm.form.controls.username?.invalid && (loginForm.form.controls.username?.dirty || loginForm.form.controls.username?.touched),
+        'has-success': loginForm.form.controls.username?.valid && (loginForm.form.controls.username?.dirty || loginForm.form.controls.username?.touched)
+      }">
+    </div>
+    <div class="col s12 l6 form-group">
+      <label for="password">Password</label>
+      <input id="password" name="password" value="" type="password" class="pass-word form-control" [(ngModel)]="login.password" required minlength="6">
+    </div>
+    <div class="col s12">
+      <button class="btn blue darken-3 waves-effect waves-light" type="submit" id="login" name="login" [disabled]="loginForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>
+<pre>|| {{loginForm.value | json}} ||</pre>
+<pre>Valid? {{loginForm.form.controls.username?.valid}}</pre>
+<pre>Dirty? {{loginForm.form.controls.username?.dirty}}</pre>
+<pre>Touched? {{loginForm.form.controls.username?.touched}}</pre>
